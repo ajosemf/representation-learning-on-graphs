@@ -10,5 +10,5 @@ Projeto de conclusão de curso de graduação no Centro Federal de Educação Te
 ## Estrutura de pastas
 * `/monografia`: Monografia completa e formatada (incluindo as correções solicitadas pela Banca e a ficha catalográfica elaborada com a orientação da biblioteca).
 * `/bibliografia`: Toda bibliografia utilizada no projeto que esteja disponível em meio magnético.
-* `/experimentos`: Código fonte dos experimentos realizados.
+* `/src`: Código fonte dos experimentos realizados.
 * `/apresentacao`: Slides da apresentação do projeto.
