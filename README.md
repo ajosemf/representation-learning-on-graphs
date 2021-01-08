@@ -1,4 +1,4 @@
-# representation-learning-on-graphs
+# Aprendizado de Representações em Grafos por Redes Neurais: uma Análise Comparativa
 Projeto de conclusão de curso de graduação no Centro Federal de Educação Tecnológica Celso Suckow da Fonseca (CEFET/RJ).
 
 - Nome do curso: Sistemas para Internet
@@ -12,3 +12,21 @@ Projeto de conclusão de curso de graduação no Centro Federal de Educação Te
 * `/bibliografia`: Toda bibliografia utilizada no projeto que esteja disponível em meio magnético.
 * `/src`: Código fonte dos experimentos realizados.
 * `/apresentacao`: Slides da apresentação do projeto.
+
+## Requisitos
+É recomendado executar este projeto por meio do _docker container_ configurado. Para tal, é necessário ter o `Docker` instalado.
+
+
+## Configuração do ambiente
+Para criar e executar o _docker container_, execute os comandos abaixo em um terminal a partir da pasta `src`:
+
+```
+docker build -t rep-learning .
+docker run -it --rm -v "$(pwd):/home/rep_learning" rep-learning bash
+```
+
+No container, instale os pacotes necessários com o comando abaixo:
+
+```
+pip install -r requirements.txt
+```
