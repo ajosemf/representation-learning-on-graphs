@@ -30,3 +30,10 @@ No container, instale os pacotes necessários com o comando abaixo:
 ```
 pip install -r requirements.txt
 ```
+
+## Conjuntos de Dados
+Os conjuntos de dados empregados neste projeto são o `Cora`, `Pubmed` e `Reddit`. Apesar de existirem diversas fontes para download na internet, é necessário baixá-los deste [repositório](https://drive.google.com/file/d/1nYj0dzFYVvfsaXi294W476L_ptr92dHS/view?usp=sharing) para garantir que estejam no formato esperado deste projeto. Após fazer o download, mova o arquivo para a pasta `src/datasets` e execute o comando abaixo em um terminal:
+
+```
+tar -xvf data.tar.xz
+```
