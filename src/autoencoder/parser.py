@@ -41,7 +41,5 @@ def parameter_parser():
     parser.add_argument("--verbose",
                         action='store_true',
 	                help = "Enable verbose output during training. Default is False.")
-
-    # parser.set_defaults(layers = [16, 16, 16])
     
     return parser.parse_args()
