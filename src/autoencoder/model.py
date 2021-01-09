@@ -14,8 +14,6 @@ class Autoencoder(object):
         b1 = tf.Variable(tf.random_normal([hidden_dim]))
         w2 = tf.Variable(tf.random_normal([hidden_dim, input_dim]))
         b2 = tf.Variable(tf.random_normal([input_dim]))
-        # w3 = tf.Variable(tf.random_normal([hidden_dim, hidden_dim]))
-        # b3 = tf.Variable(tf.random_normal([hidden_dim]))
         
         # Placeholder
         self._input_layer = tf.placeholder('float', [None, input_dim])
@@ -25,8 +23,6 @@ class Autoencoder(object):
         self._hidden_layer = tf.nn.relu(tf.add(tf.matmul(self._input_layer, w1), b1))
         
         # Classifier
-        ####### aqui entra o softmax da layer hidden
-        # self._preds = tf.nn.softmax(tf.nn.relu(tf.add(tf.matmul(self._hidden_layer, w3), b3)))
         self._preds = tf.nn.softmax(self._hidden_layer)
         
         # Decoder
@@ -50,8 +46,7 @@ class Autoencoder(object):
         tf.set_random_seed(seed)
         
 
-    # def train(self, input_train, input_test, batch_size, epochs):
-    ####### input_test nao esta sendo utilizado
+    # train
     def train(self, input_train, labels_train, input_val, labels_val, batch_size, epochs, early_stopping, verbose=True):
         """adjust model parameters by minimizing cost function error
 
@@ -76,7 +71,6 @@ class Autoencoder(object):
 
         for epoch in range(epochs):
             start = time.time()
-            # t_loss = 0
 
             # shuffle
             np.random.shuffle(train_ids)
@@ -87,13 +81,10 @@ class Autoencoder(object):
                 batch_input = input_train[batch_ids]
                 batch_labels = labels_train[batch_ids]
                 _, t_loss = self._session.run([self._optimizer, self._total_loss], feed_dict={self._input_layer: batch_input, self._labels: batch_labels})
-                #epoch_input = input_train[ i * batch_size : (i + 1) * batch_size ]
-                #epoch_labels = labels_train[ i * batch_size : (i + 1) * batch_size ]
-                # _, c = self._session.run([self._optimizer, self._total_loss], feed_dict={self._input_layer: epoch_input, self._labels: epoch_labels})
-                # t_loss += c
 
             # validation
             v_loss = self._session.run([self._total_loss], feed_dict={self._input_layer: input_val, self._labels: labels_val})
+            
             # resum
             train_loss.append(t_loss)
             val_loss.append(v_loss)
@@ -108,27 +99,5 @@ class Autoencoder(object):
         return train_loss, val_loss, time_per_epoch
 
     
-    def save_model(self, path):
-        self._saver.save(self._session, path)
-        print('Model saved\n')
-
-
-    #def load_model(self, path):
-        #self._session.run(self._init)
-        #self._saver = tf.train.Saver()
-        #self._saver.restore(self._session, path)
-        #print('Model loaded')
-
-
     def predict(self, input):
         return self._session.run([self._preds], feed_dict={self._input_layer: input})
-        
-
-    #def getEncodedImage(self, image):
-        #encoded_image = self._session.run(self._hidden_layer, feed_dict={self._input_layer:[image]})
-        #return encoded_image
-    
-
-    #def getDecodedImage(self, image):
-        #decoded_image = self._session.run(self._output_layer, feed_dict={self._input_layer:[image]})
-        #return decoded_image
