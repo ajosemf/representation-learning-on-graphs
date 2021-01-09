@@ -131,3 +131,11 @@ dmypy.json
 # datasets
 datasets/*
 !datasets/.gitkeep
+
+# autoencoder results
+autoencoder/results/cora/*
+!autoencoder/results/cora/.gitkeep
+autoencoder/results/pubmed/*
+!autoencoder/results/pubmed/.gitkeep
+autoencoder/results/reddit/*
+!autoencoder/results/reddit/.gitkeep
