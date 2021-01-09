@@ -9,20 +9,17 @@ from sklearn.preprocessing import StandardScaler
 def load_graphsage_data(dataset_path, dataset_name, normalize=True):
     """Load GraphSAGE data."""
     
-    ########################
     # carregando os arquivos
     graph_json = json.load(
         gfile.Open('{0}/{1}/{1}-G.json'.format(dataset_path, dataset_name)))
 
     graph_nx = json_graph.node_link_graph(graph_json)
-    # print(len(graph_nx.nodes()))
     
     id_map = json.load(
         gfile.Open('{0}/{1}/{1}-id_map.json'.format(dataset_path, dataset_name)))
 
     is_digit = list(id_map.keys())[0].isdigit()
     id_map = {(int(k) if is_digit else k): int(v) for k, v in id_map.items()}
-    # print(len(id_map.keys()), id_map[0], type(id_map[0]))
     
     class_map = json.load(
         gfile.Open('{0}/{1}/{1}-class_map.json'.format(dataset_path, dataset_name)))
@@ -30,10 +27,7 @@ def load_graphsage_data(dataset_path, dataset_name, normalize=True):
     is_instance = isinstance(list(class_map.values())[0], list)
     class_map = {(int(k) if is_digit else k): (v if is_instance else int(v))
                  for k, v in class_map.items()}
-    # print(len(class_map.keys()), set(list(class_map.values())), type(list(class_map.values())[0]))
-
     
-    ################################################
     # removendo nós que não possuem classes mapeadas
     broken_count = 0
     to_remove = []
@@ -49,7 +43,6 @@ def load_graphsage_data(dataset_path, dataset_name, normalize=True):
           format(broken_count))
 
     
-    #####################
     # carregando features
     feats = np.load(gfile.Open(
         '{0}/{1}/{1}-feats.npy'.format(dataset_path, dataset_name),
@@ -57,7 +50,6 @@ def load_graphsage_data(dataset_path, dataset_name, normalize=True):
     print('Loaded data, now preprocessing..')
     
     
-    ######################################
     # separando conjuntos train, val, test
     num_data = len(id_map)
 
@@ -76,10 +68,8 @@ def load_graphsage_data(dataset_path, dataset_name, normalize=True):
 
     train_ids = np.array([n for n in range(num_data) if is_train[n]],
                           dtype=np.int32)
-    # print(train_ids.shape, val_ids.shape, test_ids.shape)    
 
     
-    ######################
     # processando o target
     num_classes = len(set(class_map.values()))
     labels = np.zeros((num_data, num_classes), dtype=np.float32)
@@ -87,7 +77,6 @@ def load_graphsage_data(dataset_path, dataset_name, normalize=True):
         labels[id_map[k], class_map[k]] = 1
         
 
-    ##########################        
     # Normalizando as features
     normalize = True
     if normalize:
