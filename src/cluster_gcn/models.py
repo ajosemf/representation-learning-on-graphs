@@ -17,7 +17,6 @@
 
 import layers
 import metrics
-#import tensorflow.compat.v1 as tf
 import tensorflow as tf
 
 FLAGS = tf.flags.FLAGS
