@@ -19,7 +19,6 @@ import time
 import models
 import numpy as np
 import partition_utils
-#import tensorflow.compat.v1 as tf
 import tensorflow as tf
 import utils
 
