@@ -24,9 +24,7 @@ import partition_utils
 import scipy.sparse as sp
 import sklearn.metrics
 import sklearn.preprocessing
-#import tensorflow.compat.v1 as tf
 import tensorflow as tf
-#from tensorflow.compat.v1 import gfile
 from tensorflow import gfile
 
 
