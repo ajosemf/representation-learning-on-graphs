@@ -18,7 +18,6 @@
 import time
 import metis
 import scipy.sparse as sp
-#import tensorflow.compat.v1 as tf
 import tensorflow as tf
 
 
