@@ -37,3 +37,10 @@ Os conjuntos de dados empregados neste projeto são o `Cora`, `Pubmed` e `Reddit
 ```
 tar -xvf data.tar.xz
 ```
+
+## Experimento
+Os melhores hiperparâmetros para cada par arquitetura/conjunto de dados foram obtidos pelo método _grid search_. Consulte a [monografia](monografia/monografia.pdf) para maiores detalhes. Para executar os experimentos, entre nas pastas `src/autoencoder` e `src/cluster_gcn` e execute em um terminal:
+
+```
+./run_mprof.sh
+```
