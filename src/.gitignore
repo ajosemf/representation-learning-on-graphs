@@ -127,3 +127,31 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# datasets
+datasets/*
+!datasets/.gitkeep
+
+# autoencoder results
+autoencoder/results/cora/*
+!autoencoder/results/cora/.gitkeep
+autoencoder/results/pubmed/*
+!autoencoder/results/pubmed/.gitkeep
+autoencoder/results/reddit/*
+!autoencoder/results/reddit/.gitkeep
+
+# clustergcn results
+cluster_gcn/results/cora/*
+!cluster_gcn/results/cora/.gitkeep
+cluster_gcn/results/pubmed/*
+!cluster_gcn/results/pubmed/.gitkeep
+cluster_gcn/results/reddit/*
+!cluster_gcn/results/reddit/.gitkeep
+
+# clustergcn models
+cluster_gcn/model/cora/0/*
+!cluster_gcn/model/cora/0/.gitkeep
+cluster_gcn/model/pubmed/0/*
+!cluster_gcn/model/pubmed/0/.gitkeep
+cluster_gcn/model/reddit/0/*
+!cluster_gcn/model/reddit/0/.gitkeep
