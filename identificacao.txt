@@ -1,0 +1,6 @@
+· Centro Federal de Educação Tecnológica Celso Suckow da Fonseca
+- Nome do curso: Sistemas para Internet
+- Título do projeto: Aprendizado de Representações em Grafos por Redes Neurais: uma Análise Comparativa
+- Nome completo do autor: Augusto José Moreira da Fonseca
+- Nome do orientador: Eduardo Bezerra da Silva, D. Sc.
+- Data da defesa: 12/2020
