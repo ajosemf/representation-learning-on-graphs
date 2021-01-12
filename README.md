@@ -4,7 +4,7 @@ Projeto de conclusão de curso de graduação no Centro Federal de Educação Te
 - Nome do curso: Sistemas para Internet
 - Título do projeto: Aprendizado de Representações em Grafos por Redes Neurais: uma Análise Comparativa
 - Nome completo do autor: Augusto José Moreira da Fonseca
-- Nomes do orientador: Eduardo Bezerra da Silva, D.Sc.
+- Nomes do orientador: Eduardo Bezerra da Silva, D. Sc.
 - Data da defesa: 12/2020
 
 ## Estrutura de pastas
@@ -44,3 +44,6 @@ Os melhores hiperparâmetros para cada par arquitetura/conjunto de dados foram o
 ```
 ./run_mprof.sh
 ```
+
+## Análise
+A análise dos experimentos é apresentada no [jupyter notebook](src/analysis/analysis.ipynb) disponível na pasta `src/analysis`.
