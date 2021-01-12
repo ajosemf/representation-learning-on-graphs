@@ -4,7 +4,7 @@ Projeto de conclusão de curso de graduação no Centro Federal de Educação Te
 - Nome do curso: Sistemas para Internet
 - Título do projeto: Aprendizado de Representações em Grafos por Redes Neurais: uma Análise Comparativa
 - Nome completo do autor: Augusto José Moreira da Fonseca
-- Nomes do orientador: Eduardo Bezerra da Silva, D. Sc.
+- Nome do orientador: Eduardo Bezerra da Silva, D. Sc.
 - Data da defesa: 12/2020
 
 ## Estrutura de pastas
